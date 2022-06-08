@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: darkgray
+}
+
+.todo-container {
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    background: gray;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo {
+    width: 400px;
+}
+
+.todo-container h2 {
+    padding: 10px;
+    font-family: 'Candal', sans-serif;
+    font-size: 3em;
+}
+
+.todo-header input {
+    width: 92%;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    font-family: 'Candal', sans-serif;
+}
+
+.todo-header button {
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+
+    background-color: black;
+}
+
+
+.todo-footer button {
+    font-size: 24px;
+}
+
+.todo-footer i {
+    color: red;
+}
+
+.todo-list-item {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Candal', sans-serif;
+    background: lightgray;
+    display: flex;
+    flex-direction: row;
+}
+
+.todo-list-item form {
+    width: 100%;
+    display: flex;
+}
+
+.todo-list-item input {
+    flex-grow: 2;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Candal', sans-serif;
+}
+
+
+.todo-list-item button {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    font-family: 'Candal', sans-serif;
+    background-color: gray;
+    margin-right: 10px;
+
+}
+
+.todo-list-item div {
+    flex-grow: 2;
+}
+
+.ButtonClicked {
+    background-color: black;
+}
+
+.todo-list-item button:hover,
+.todo-list-item button:focus {
+    background: black;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+}
+
+.todo-footer button:hover {
+    background: black;
+    transform: translateY(-4px);
+
+
+
+}
+
+.todo-header button:hover {
+    background: black;
+    transform: translateX(4px);
+}

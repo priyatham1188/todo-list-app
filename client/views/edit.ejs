@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>To-do</title>
+    <link rel="stylesheet"  type="text/css" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+
+<div class="todo-container">
+    <h2>To-do list</h2>
+    <div class="todo">
+<form method="POST" action="/add" class="todo-header">
+    <input type="text" placeholder="What do you like to do?" name="item">
+    <button type="submit"  ><span class="fa fa-plus-circle"></span></button>
+</form>
+
+
+<ul class="todo-list">
+    
+    <% for(var i = 0; i <todo.length; i++){%>
+        <% if(todo[i].id== editid){ %>
+    
+    <li class="todo-list-item"> 
+       
+        <form method="POST" action="/edit/<%= todo[i].id %>">
+            <input type="text" value="<%= todo[i].item %>" name="item">
+            <button type="submit" >Save</button>
+        </form>
+    
+    </li>
+    
+
+    <%}else {%>
+        <li class="todo-list-item">
+
+            <div class="todo-list-item-name"> <%= todo[i].item %> </div>
+        <button type="submit" formaction="/remove/<%= todo[i].id %>" formmethod="post" ><i class="fas fa-trash"></i> </button>
+        <button type="submit" formaction="/edit/<%= todo[i].id %>" formmethod="get" ><i class="fas fa-edit"></i></button>
+        <button type="submit" formaction="/done/<%= todo[i].id %>" formmethod="POST" id="done" ><i class="fas fa-thumbs-up"></i></button>
+
+       </li>
+
+<% } %>
+<% } %>
+</ul>
+
+
+
+</div>
+<div class="todo-footer">
+<button id="signout"><a href='/signout'><i class="fas fa-sign-out-alt"></i></a></button>
+</div>
+
+
+</div>
+</div>
+
+<script>
+    
+    $( "#done" ).click(function( ) {
+console.log("I was here")
+$(".todo-list-item").toggleClass('ButtonClicked');
+});
+
+
+</script>
+</body>
+</html>
